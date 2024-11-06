@@ -6,7 +6,7 @@ const SubmitBtn = ({ text }) => {
   return (
     <button
       type="submit"
-      className="btn btn-primary btn-block"
+      className="btn bg-black text-white rounded-lg w-full"
       disabled={isSubmitting}
     >
       {isSubmitting ? (

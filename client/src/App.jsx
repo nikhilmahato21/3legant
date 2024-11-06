@@ -17,6 +17,9 @@ import { action as registerAction } from "./pages/Register";
 import { action as loginAction } from "./pages/Login";
 import { store } from "./store";
 import DashboardLayout from "./pages/dashboard/DashboardLayout";
+import CreateProduct from "./pages/dashboard/CreateProduct";
+import AllProducts from "./pages/dashboard/AllProducts";
+import EditProduct from "./pages/dashboard/EditProduct";
 
 const router = createBrowserRouter([
   {
@@ -54,10 +57,6 @@ const router = createBrowserRouter([
         path: "checkout",
         element: <Checkout />,
       },
-      {
-        path: "dashboard",
-        element: <DashboardLayout />,
-      },
     ],
   },
   {
@@ -71,6 +70,31 @@ const router = createBrowserRouter([
     element: <Register />,
     errorElement: <Error />,
     action: registerAction,
+  },
+  {
+    path: "/dashboard",
+    element: <DashboardLayout />,
+    errorElement: <Error />,
+    children: [
+      {
+        index: true,
+        element: <CreateProduct />,
+        errorElement: <ErrorElement />,
+        loader: loader,
+      },
+      {
+        path: "products",
+        element: <AllProducts />,
+        errorElement: <ErrorElement />,
+        loader: productsLoader,
+      },
+      {
+        path: "products/:id",
+        element: <EditProduct />,
+        errorElement: <ErrorElement />,
+        loader: singleProductLoader,
+      },
+    ],
   },
 ]);
 

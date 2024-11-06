@@ -3,6 +3,7 @@ import FormInput from "../components/FormInput";
 import SubmitBtn from "../components/SubmitBtn";
 import { customFetch } from "../utils";
 import { toast } from "react-toastify";
+import chair from "../assets/chair2.png"
 
 export const action = async ({ request }) => {
   const formData = await request.formData();
@@ -23,21 +24,29 @@ export const action = async ({ request }) => {
 
 const Register = () => {
   return (
-    <section className="h-screen grid place-items-center">
+    <section className="h-screen grid grid-cols-2 place-items-center">
+      <div className="bg-[#F3F5F7] relative h-full w-full flex justify-center items-center">
+        <h1 className="absolute top-2 right-1/2 font-semibold text-slate-950 text-lg">3legant</h1>
+        <img src={chair} className="object-cover"/>
+      </div>
       <Form
         method="POST"
-        className="card w-96 p-8 bg-base-100 shadow-lg flex flex-col gap-y-4"
+        className="card w-96 p-8 bg-base-100  flex flex-col gap-y-4"
       >
-        <h4 className="text-center text-3xl font-bold">Register</h4>
-        <FormInput
-          type="text"
-          label="name"
-          name="name"
-          defaultValue="nik"
-        />
+        <h4 className="text-center text-3xl font-bold">Sign Up</h4>
+        <p className="text-center">
+          Already a member ?
+          <Link
+            to="/login"
+            className="ml-2 link link-hover link-primary capitalize"
+          >
+            Sign In
+          </Link>
+        </p>
+        <FormInput type="text" label="your name" name="name" defaultValue="nik" />
         <FormInput
           type="email"
-          label="email"
+          label="Your email"
           name="email"
           defaultValue="nik@gmail.com"
         />
@@ -50,15 +59,6 @@ const Register = () => {
         <div className="mt-4">
           <SubmitBtn text="register" />
         </div>
-        <p className="text-center">
-          Already a member ?
-          <Link
-            to="/login"
-            className="ml-2 link link-hover link-primary capitalize"
-          >
-            login
-          </Link>
-        </p>
       </Form>
     </section>
   );
