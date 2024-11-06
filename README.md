@@ -15,6 +15,7 @@ To set up and run both the backend and frontend in one go, use the following ste
    ```bash
    cd backend -> npm install -> npm run server
 
-   2. Navigate to the `client` directory, install dependencies, and start the frontend server:
+
+ 2. Navigate to the `client` directory, install dependencies, and start the frontend server:
    ```bash
     cd client -> npm install -> npm run dev
