@@ -78,13 +78,13 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <CreateProduct />,
+        element:<AllProducts />  ,
         errorElement: <ErrorElement />,
         loader: loader,
       },
       {
         path: "products",
-        element: <AllProducts />,
+        element: <CreateProduct />,
         errorElement: <ErrorElement />,
         loader: productsLoader,
       },
