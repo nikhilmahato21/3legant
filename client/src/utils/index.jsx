@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const productionUrl = "http://localhost:3000/api/v1/";
+const productionUrl = "https://threelegant-htt3.onrender.com/api/v1/";
 
 export const customFetch = axios.create({
   baseURL: productionUrl,
