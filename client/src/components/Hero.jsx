@@ -27,7 +27,7 @@ const Hero = () => {
       <div className="flex justify-between ">
         <h1 className="max-w-2xl text-4xl text-slate-800 font-semibold tracking-tight sm:text-6xl">
           Simply Unique <span className="text-slate-500">/</span> <br />
-          Simply Better
+          Simply Better!
         </h1>
         <p className="mt-8 max-w-lg  text-lg leading-8">
           <span className="text-slate-800">3legant</span> is a gift &
